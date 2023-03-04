@@ -1,0 +1,188 @@
+﻿
+@{
+    ViewBag.Title = "Log in";
+    Layout = null;
+}
+
+@model IList<AdChimeProject.Contacts>
+
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .formulariologin {
+            padding-top: 10px;
+        }
+
+        ::-webkit-input-placeholder {
+            color: red;
+        }
+
+        :-moz-placeholder { /* Firefox 18- */
+            color: red;
+        }
+
+        ::-moz-placeholder { /* Firefox 19+ */
+            color: red;
+        }
+
+        :-ms-input-placeholder {
+            color: red;
+        }
+
+
+        .btncls {
+            background-color: #3A4F5E;
+            border: #2e6da4;
+            font-family: Arial, Geneva, Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            color: #fff;
+            letter-spacing: 1px;
+            padding: 8px 12px;
+            font-size: 14px;
+            font-weight: normal;
+            border-radius: 4px;
+            line-height: 1.5;
+            text-decoration: none;
+            /*Transition*/
+            -webkit-transition: All 0.5s ease;
+            -moz-transition: All 0.5s ease;
+            -o-transition: All 0.5s ease;
+            -ms-transition: All 0.5s ease;
+            transition: All 0.5s ease;
+        }
+
+            .btncls:hover {
+                background-color: #87A2B6;
+                border: #2e6da4;
+                font-family: Arial, Geneva, Arial, Helvetica, sans-serif;
+                font-size: 15px;
+                color: #000;
+                letter-spacing: 1px;
+                padding: 8px 12px;
+                font-size: 14px;
+                font-weight: normal;
+                border-radius: 4px;
+                line-height: 1.5;
+                text-decoration: none;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="padding-top: 5%;">
+        <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 1000px !important;">
+            <div class="modal-content" style="">
+                <div class="modal-body" style="padding-top: 0px; padding-right: 5px; padding-left: 5px; padding-bottom: 5px;">
+                    <div class="row">
+                        <div class="col-md-1">
+
+                        </div>
+                        <div class="col-md-10">
+                            @foreach (var con in Model)
+                            {
+                                <div class="row">
+
+
+                                    <div style="overflow-x: scroll;width: 100%;">
+                                        
+                                        <p style="font-size: 23px; font-weight: bold; text-align: center; margin-top: 10px;">Contact Info</p>
+                                        <table style="width: 100%; border-collapse: separate; border-spacing: 0 10px; margin-bottom: 1rem; color: #212529;">
+                                            <thead style=" display: table-header-group; vertical-align: middle; border-color: inherit;">
+                                                <tr style=" display: table-row; vertical-align: inherit; border-color: inherit;">
+                                                    <th style="color: #fff; background-color: #343a40; border-color: #454d55;border: none;padding: 15px; font-size: 14px;vertical-align: bottom;">Variable</th>
+                                                    <th style="color: #fff; background-color: #343a40; border-color: #454d55;border: none;padding: 15px; font-size: 14px;vertical-align: bottom;">Value</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody style=" display: table-row-group; vertical-align: middle; border-color: inherit;">
+                                                <tr style="margin-bottom: 10px;box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);position: relative; border: 1px solid transparent; border-radius: 0.25rem; ">
+                                                    <th style=" border: none; padding: 15px; font-size: 14px; background: #fff;vertical-align: top;">Name</th>
+                                                    <td style=" border: none; padding: 15px; font-size: 14px; background: #fff; vertical-align:top;">@con.Name</td>
+                                                </tr>
+                                                <tr  style="margin-bottom: 10px;box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);position: relative; border: 1px solid transparent; border-radius: 0.25rem; ">
+                                                    <th  style=" border: none; padding: 15px; font-size: 14px; background: #fff;vertical-align: top;">Last Name</th>
+                                                    <td style=" border: none; padding: 15px; font-size: 14px; background: #fff; vertical-align:top;">@con.LastName</td>
+                                                </tr>
+                                                <tr  style="margin-bottom: 10px;box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);position: relative; border: 1px solid transparent; border-radius: 0.25rem; ">
+                                                    <th  style=" border: none; padding: 15px; font-size: 14px; background: #fff;vertical-align: top;">Country</th>
+                                                    <td style=" border: none; padding: 15px; font-size: 14px; background: #fff; vertical-align:top;">@con.Country</td>
+                                                </tr>
+                                                <tr  style="margin-bottom: 10px;box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);position: relative; border: 1px solid transparent; border-radius: 0.25rem; ">
+                                                    <th  style=" border: none; padding: 15px; font-size: 14px; background: #fff;vertical-align: top;">Phone Number</th>
+                                                    <td style=" border: none; padding: 15px; font-size: 14px; background: #fff; vertical-align:top;">@con.CountryCodePhone @con.PhoneNumber</td>
+                                                </tr>
+                                                <tr  style="margin-bottom: 10px;box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);position: relative; border: 1px solid transparent; border-radius: 0.25rem; ">
+                                                    <th  style=" border: none; padding: 15px; font-size: 14px; background: #fff;vertical-align: top;">Is Active:</th>
+                                                    <td style=" border: none; padding: 15px; font-size: 14px; background: #fff; vertical-align:top;">@con.bActive</td>
+                                                </tr>
+                                                <tr  style="margin-bottom: 10px;box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);position: relative; border: 1px solid transparent; border-radius: 0.25rem; ">
+                                                    <th  style=" border: none; padding: 15px; font-size: 14px; background: #fff;vertical-align: top;">Optin SMS:</th>
+                                                    <td style=" border: none; padding: 15px; font-size: 14px; background: #fff; vertical-align:top;">@con.optinSMS</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+
+                                </div>
+                            }
+
+
+
+
+                        </div>
+                        <div class="col-md-1" style="text-align: right;">
+                            <span onclick="$('#modalviewdetails').modal('hide'); $('#modalviewdetails').removeClass('show'); $('#modalviewdetails').css('display', 'none');" class="w3-button w3-display-topright" style="font-size: 20px;color: black;">
+                                X
+                            </span>
+                        </div>
+                    </div>
+
+
+
+
+                </div><!-- /.modal-content -->
+
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+
+    <script src="~/Content/js_m/partialviewtable/jquery.min.js"></script>
+    <script src="~/Content/js_m/partialviewtable/popper.js"></script>
+    <script src="~/Content/js_m/partialviewtable/bootstrap.min.js"></script>
+    <script src="~/Content/js_m/partialviewtable/tablepartialview.js"></script>
+</body>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script>
+    $(function () {
+        $(".select2-multiple_1").select2({
+            allowClear: true,
+            placeholder: "Select option"
+        });
+    });
+
+    $(function () {
+        $(".select2-multiplethird_1").select2({
+            allowClear: true,
+            placeholder: "Select option/options"
+        });
+    });
+
+
+
+
+    $(function () {
+        $("#countriesselect").select2({
+            allowClear: true
+        });
+    });
+
+
+
+</script>
